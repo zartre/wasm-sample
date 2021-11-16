@@ -8,7 +8,7 @@ RUN cd main && GOOS=js GOARCH=wasm go build -o ../out/main.wasm
 WORKDIR /app
 RUN cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" out/
 
-FROM node:alpine
+FROM node:lts-alpine
 
 WORKDIR /app
 
