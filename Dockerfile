@@ -12,9 +12,11 @@ FROM node:lts-alpine
 
 WORKDIR /app
 
-COPY --from=build-stage /app/out ./
+COPY --from=build-stage /app/out assets/
 COPY src/web ./
 
 EXPOSE 8080
 
-CMD npx http-server
+RUN npm i -g http-server
+
+CMD http-server

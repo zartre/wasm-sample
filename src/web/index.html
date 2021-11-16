@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wasm Sample</title>
 
-    <script src="wasm_exec.js"></script>
+    <script src="./assets/wasm_exec.js"></script>
     <script>
       const go = new Go();
       WebAssembly.instantiateStreaming(
-        fetch("main.wasm"),
+        fetch("./assets/main.wasm"),
         go.importObject
       ).then((result) => {
         go.run(result.instance);
