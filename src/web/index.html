@@ -17,5 +17,19 @@
       });
     </script>
   </head>
-  <body></body>
+  <body>
+    <label for="email">E-mail</label>
+    <input type="text" name="email" id="email">
+    <button onclick="validate(email.value)">Check</button>
+    <br>
+    <label for="result">Result</label>
+    <input type="text" name="result" id="result" disabled>
+
+    <script>
+      const validate = s => {
+        const v = isEmail(s)
+        result.value = v
+      }
+    </script>
+  </body>
 </html>
